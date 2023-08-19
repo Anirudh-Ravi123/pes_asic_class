@@ -49,6 +49,44 @@ riscv64-unknown-elf-objdump -d sum1ton.o | less
  ![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/8014d335-88cc-4bc1-8444-629cbfe23080)
 
 
+
+## Spike Simulation and Debug
+Comparing the output of the RICSV gcc complier to the previously used gcc complier
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/36b21e97-a26d-4480-ac14-482e06b66464)
+
+- spike:command to launch the RISC-V Spike simulator
+- pk (proxy kernel):  used to load and run the program
+
+  main function disassembled
+ ![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/493df41b-b6f8-46dd-9ee3-e60b93e8b956)
+
+
+  to open the spike debugger we type the following command :
+   ```spike -d pk (filename).o```
+
+
+  to run partially till a particular intruction of choice then we can use the following command 
+```
+until pc 0 (line number)
+```
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/4429e2ef-d0d7-4723-b6ef-dca8c05c57dc)
+
+To find the contents of a variable we use the command : 
+```reg 0 (variable name)```. 
+Pressing the enter key will execute the next line of assembly
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/c06f0430-d699-430a-a550-2588bd5a4162)
+
+
+
+
+
+
+
+
+
+
  
 
 
