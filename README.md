@@ -78,6 +78,8 @@ To find the contents of a variable we use the command :
 
 ```reg 0 (variable name)```. 
 
+We can execut the next line by pressing the enter key
+
 
 ![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/c06f0430-d699-430a-a550-2588bd5a4162)
 
