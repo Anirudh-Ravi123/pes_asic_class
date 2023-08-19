@@ -73,8 +73,11 @@ until pc 0 (line number)
 ![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/4429e2ef-d0d7-4723-b6ef-dca8c05c57dc)
 
 To find the contents of a variable we use the command : 
+
+
+
 ```reg 0 (variable name)```. 
-Pressing the enter key will execute the next line of assembly
+
 
 ![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/c06f0430-d699-430a-a550-2588bd5a4162)
 
