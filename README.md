@@ -84,6 +84,24 @@ We can execut the next line by pressing the enter key
 ![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/c06f0430-d699-430a-a550-2588bd5a4162)
 
 
+## C Program for highest and lowest signed and unsigned integers
+
+
+Unsigned Highest
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/d4e542e2-1b8a-4a2f-99b3-0ee8d1c60353)
+
+
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/10c1e3ad-3479-4fc4-a962-4b2901a65ea6)
+
+
+Signed Highest
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/295ab909-bbc8-4fe8-9e46-db6c7288eb25)
+
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/a1c94b6e-3cea-4ce5-8b2e-9417055c489a)
 
 
 
