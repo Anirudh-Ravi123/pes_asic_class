@@ -22,7 +22,8 @@
 
 # Simple C program to calculates sum from 1 to N
 
-![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/d5b03044-0777-4092-8c15-de83b3999130
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/c256fef2-2355-47f1-8221-3f7f79461677)
+
 
 
 ![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/8966ccc9-d9d3-41f5-97b9-1839e5555592)
