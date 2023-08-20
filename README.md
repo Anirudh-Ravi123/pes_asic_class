@@ -1,6 +1,12 @@
 # pes_asic_class
- Documentation of ASIC class guided by Kunal Gosh 
- 
+
+VLSI (Very Large-Scale Integration) physical design for ASIC (Application-Specific Integrated Circuit) involves the process of transforming a high-level logical design of a digital circuit into a detailed layout that can be manufactured on a silicon wafer. This process includes various steps and considerations to ensure that the final integrated circuit functions correctly, meets performance requirements, and can be produced reliably.
+It's a complex process that requires careful planning and attention to detail to ensure that the final ASIC functions as intended and meets performance and reliability requirements.
+
+VLSI (Very Large-Scale Integration):
+VLSI refers to the design and fabrication of integrated circuits (ICs) that contain a large number of transistors and other electronic components on a single chip.
+ASIC (Application-Specific Integrated Circuit):
+An ASIC is a type of integrated circuit that is designed and customized for a specific application or task. Unlike general-purpose microprocessors, which can execute a wide range of software, ASICs are optimized to perform a particular set of functions efficiently. They are tailored to meet the requirements of a specific application, resulting in better performance, lower power consumption, and potentially reduced cost compared to using off-the-shelf components.
 # Contents
 
 # Day 1
