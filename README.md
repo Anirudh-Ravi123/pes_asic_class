@@ -209,8 +209,11 @@ sd  x2, 8(x3)
 
  # Sum of Numbers from 1 to n using ASM
 
- We write two programs here, one in C and one in assembly. Main part of the program is processed in ASM and result is desplayed through the C program
+ We write two programs here, one in C and one in assembly. Main part of the program is processed in ASM and result is desplayed through the C program.
+ 
 C code 
+
+
 
 
 ![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/8cf4ee89-7f69-43f0-ba43-b6a39f1c35d7)
