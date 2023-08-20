@@ -14,7 +14,7 @@
 # Day 2
   - [Application Binary Interface](#application-binary-interface)
   - [Memory Allocation for Double Words](#memory-allocation-for-double-words)
-  - [Load, Add and Store Instructions](#load,-add-and-store-instructions)
+  - [Load, Add and Store Instructions](#load-add-and-store-instructions)
   - [ABI Names](#abi-names)
   - [Sum of Numbers From 1 to n using ASM](#sum-of-numbers-from-1-to-n-using-asm)
 
