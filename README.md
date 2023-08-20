@@ -220,7 +220,8 @@ Assembly code
 
 
 Execution 
-![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/b1d3bf31-cad1-4d6e-9dbf-6abd2638c6b4
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/b1d3bf31-cad1-4d6e-9dbf-6abd2638c6b4)
 
 
 ![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/9b0153fd-5fea-4461-be70-f1411a5819cf)
