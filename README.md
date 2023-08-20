@@ -207,7 +207,26 @@ sd  x2, 8(x3)
 
  
 
- 
+ # Sum of Numbers from 1 to n using ASM
+
+ We write two programs here, one in C and one in assembly. Main part of the program is processed in ASM and result is desplayed through the C program.
+
+C code 
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/8cf4ee89-7f69-43f0-ba43-b6a39f1c35d7)
+
+Assembly code
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/569c005e-d0e1-41a6-865a-37a507adb2bf)
+
+
+Execution 
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/b1d3bf31-cad1-4d6e-9dbf-6abd2638c6b4
+
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/9b0153fd-5fea-4461-be70-f1411a5819cf)
+
+
+
 
 
 
