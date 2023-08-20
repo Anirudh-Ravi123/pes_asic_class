@@ -3,7 +3,7 @@
  
 # Contents
 
-# Day 1
+## Day 1
 
 # ARCHITECTURE FLOW 
 - HIGH LEVEL CODING LANGUAGE Like C or C++
@@ -88,6 +88,8 @@ We can execut the next line by pressing the enter key
 
 
 Unsigned Highest
+An unsigned integer can only represent non-negative numbers. It uses all bits to represent the magnitude of the number, without reserving any bit for sign representation
+The range of values that can be represented by an N-bit unsigned integer is from 0 to 2^N - 1
 
 ![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/d4e542e2-1b8a-4a2f-99b3-0ee8d1c60353)
 
@@ -97,6 +99,8 @@ Unsigned Highest
 
 
 Signed Highest
+A signed integer can represent both positive and negative numbers. It uses one bit to represent the sign (positive or negative) and the remaining bits to represent the magnitude of the number
+The range of values that can be represented by an N-bit signed integer is from -2^(N-1) to 2^(N-1) - 1
 
 ![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/295ab909-bbc8-4fe8-9e46-db6c7288eb25)
 
@@ -104,8 +108,106 @@ Signed Highest
 ![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/a1c94b6e-3cea-4ce5-8b2e-9417055c489a)
 
 
+## Day 2
+
+# Application Binary Interface
+
+- An Application Binary Interface (ABI) is a set of rules and conventions that dictate how different components of a software system communicate with each other at the binary level. ABI serves as a bridge between high-level programming languages and the machine-level instructions that computers understand.
+
+- ABIs are essential for ensuring compatibility between different parts of a system, especially when those parts are developed by different parties or using different programming languages.
+
+# Memory Allocation for Double Words
+
+Length of a register in the RISCV architecture is 64 bits. The two different ways to load data into these registers:
+  - Loading data directly into the registers
+  - Loading data into memory and then into the registers.
+
+64-bit number  can be loaded into memory in little-endian or big-endian format.
+
+-Big-Endian:
+In a big-endian system the most significant byte value is stored at the lowest memory address, while the least significant byte is stored at the highest memory address. 
+
+-Little-Endian:
+In a little-endian system the least significant byte value is stored at the lowest memory address, while the most significant byte is stored at the highest memory address. 
+
+# Load, Add and Store Instructions
+
+**Load Instruction**
+Load instructions are used to transfer data from memory into registers.Load instructions are essential for bringing data into the processor's registers before it can be manipulated by other instructions.
+
+```
+ld  x6, 16(x7)
+```
+
+- ld: Load Doubleword. It indicates that the instruction is used to load a 64-bit value from memory.
+- x6: This is the destination register.
+- 16: This is the offset value. It specifies the displacement from the address in register x7.
+- (x7): This indicates that the address from which to load the data is calculated using the value stored in register x7.
 
 
+Execution 
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/51665fdf-d62d-4c06-bb91-06365aa21656)
+
+- funct3 and opcode stores the ld command
+- Destination register is stored as 5 bits in rd.
+- ource register is stored as 5 bits in rs1.
+- Offset is stored as 12 bits in immediate
+
+  
+  
+
+ 
+**Add Instruction**
+
+ Assembly instruction add is used to perform addition between two registers and store the result in a destination register.
+
+ ```
+add  x1, x2,x3
+```
+
+- x1:destination register
+- x2,x3:source registers containing the operands that are to be added.
+
+Execution
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/505eedee-2f0c-4cf8-9cc6-db5d820eb327)
+
+- funct3 funct7 and opcode stores the add command.
+- destination register x1 is stored in rd.
+- source registers x2 and x3 are stored in rs1 and rs2.
+
+
+**Store Instruction**
+Store instructions are used to transfer data from registers back to memory. Store instructions are necessary for updating memory with the results of computation carried out by the processor.
+
+ ```
+sd  x2, 8(x3)
+```
+- sd : store doubleword command
+- x2 is the data register
+- x3 is the source register
+- 8 is offset
+
+  ![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/daa44b3e-d70f-4c1c-aa57-bdf84a27de51)
+
+- funct3 and opcode stores the sd command
+-  offest 8 is stored as immediate
+-  data register x2 is stored in rs2
+-  source register x3 in rs1
+
+  # 32-Registers and their ABI Names
+  In the RISC-V architecture, there are 32 integer registers, and they are commonly referred to by their numeric indices x0 through x31. 
+
+ **ABI Names**
+ These are the names a user uses to access the registers of the RISC-V CPU core.
+
+ 
+ ![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/e0125ca7-3f3f-40ae-b9b4-90b9c5d5d13d)
+
+
+ 
+
+ 
 
 
 
