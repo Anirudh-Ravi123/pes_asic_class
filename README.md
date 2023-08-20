@@ -3,7 +3,21 @@
  
 # Contents
 
-## Day 1
+# Day 1
+  - [ARCHITECTURE FLOW ](#architecture-flow)
+  - [Apps to Hardware ](#apps-to-hardware)
+  - [Running a simple C program](#running-a-simple-c-program)
+  - [RISCV GCC Compile and Assembly Level code](#riscv-gcc-compile-and-assembly-level-code)
+  - [Spike Simulation and Debug](#spike-simulation-and-debug)
+  - [C Program for highest and lowest signed and unsigned integers](#c-program-for-highest-and-lowest-signed-and-unsigned-integers)
+
+# Day 2
+  - [Application Binary Interface](#application-binary-interface)
+  - [Memory Allocation for Double Words](#memory-allocation-for-double-words)
+  - [Load, Add and Store Instructions](#load,-add-and-store-instructions)
+  - [ABI Names](#abi-names)
+  - [Sum of Numbers From 1 to n using ASM](#sum-of-numbers-from-1-to-n-using-asm)
+
 
 # ARCHITECTURE FLOW 
 - HIGH LEVEL CODING LANGUAGE Like C or C++
