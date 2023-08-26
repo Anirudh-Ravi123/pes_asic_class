@@ -287,7 +287,7 @@ git clone https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git
 
 - Navigate to the sky130RTLDesignAndSyntheseWOrkshop direcotry
 - the verilog_files contains all the verilog source code files and the test bench files
-![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/07ac51a6-f7fa-47ed-8edb-0d7d2bcfe9dc
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/07ac51a6-f7fa-47ed-8edb-0d7d2bcfe9dc)
 
 EXECUTION 
 - to run the file we can use verilog
@@ -309,9 +309,10 @@ TESTBENCH CODE
 
 - after executing the command using ./a.out the vcd dump is created .
 - gtkwave is used to view the waveform
-  '''
+
+```
   gtkwave tb_good_mux.vcd
-  '''
+```
 
 ![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/24b0890a-13aa-41cc-942f-6a1222dce617)
 
