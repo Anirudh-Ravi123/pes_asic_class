@@ -24,6 +24,7 @@ An ASIC is a type of integrated circuit that is designed and customized for a sp
   - [32-Registers and their ABI Names](#32-registers-and-their-abi-names)
   - [Sum of Numbers From 1 to n using ASM](#sum-of-numbers-from-1-to-n-using-asm)
 
+## Day 1
 
 # ARCHITECTURE FLOW 
 - HIGH LEVEL CODING LANGUAGE Like C or C++
@@ -252,6 +253,75 @@ Execution
 
 ![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/9b0153fd-5fea-4461-be70-f1411a5819cf)
 
+
+## DAY 3
+
+# Introduction to Verilog RTL design and Synthesis with SKY130 Technology
+ # Open-Source Simulator iVerilog
+
+**Simulator**
+It is a tool used for simulating the design. It looks for the changes on the input signals to evaluate the outputs.
+If there is no change in the inputs, the simulator doesn't evaluate the outputs.
+
+**Iverilog**
+Iverilog is an open-source Verilog simulation and synthesis tool used for designing and testing digital circuits. Verilog is a hardware description language (HDL) used to model and design digital systems, such as integrated circuits and FPGA (Field-Programmable Gate Array) designs.
+
+Simulation Flow
+-  A design code is the Verilog or VHDL code that you write to define the logic and behavior of your digital circuit.
+-   A test bench is a separate piece of code written to simulate and test your design. It creates input stimuli to the design, monitors the outputs, and checks if the design's behavior matches the expected results.
+- The iverilog simulator  is going to look for changes in the input and then accordingly dump the changes in the output. The output of the simulator is going to be a VCD file.
+-  Output waveforms generated can be viewed using Gtkwave.GTKWave is a open-source waveform viewer used in digital circuit design and simulation.GTKWave is a versatile tool that aids in the debugging and verification of digital designs. It's widely used by digital designers and engineers to gain insights into their designs' behavior, making it easier to ensure correctness and reliability before moving to hardware implementation.
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/407cd84a-dfb3-4d28-8cff-c6e3db310d4b)
+
+
+# LAB USING VERILOG AND GTKWAVE 
+Installation 
+- Create a new directory in home called as vsd and inside vsd create directory vlsi
+- run the command
+```
+git clone https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git
+```
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/5d065845-00f0-45be-bf70-fee64eb4465f)
+
+
+- Navigate to the sky130RTLDesignAndSyntheseWOrkshop direcotry
+- the verilog_files contains all the verilog source code files and the test bench files
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/07ac51a6-f7fa-47ed-8edb-0d7d2bcfe9dc
+
+EXECUTION 
+- to run the file we can use verilog
+'''
+iverilog good_mux.v tb_good_mux.v
+'''
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/a210fd94-b5a8-41a3-a38d-5467aca83a84)
+
+DESIGN CODE
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/f6953336-7830-4c99-9ba7-a254fa57d3d0)
+
+
+TESTBENCH CODE
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/dff49515-3d74-4679-b09f-f80bf979185c)
+
+
+
+- after executing the command using ./a.out the vcd dump is created .
+- gtkwave is used to view the waveform
+  '''
+  gtkwave tb_good_mux.vcd
+  '''
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/24b0890a-13aa-41cc-942f-6a1222dce617)
+
+
+
+
+
+
+
+ 
 
 
 
