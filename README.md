@@ -381,8 +381,10 @@ write_verilog -noaatr good_mux_netlist.v
 
 ![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/dd6d8a71-6306-4e64-9cdf-7d1e7b99ebad)
 
-
- 
+Here 
+- io & i1 :inputs
+- sel : select line
+- y: output
 
 
 
