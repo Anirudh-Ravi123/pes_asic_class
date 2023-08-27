@@ -24,7 +24,9 @@ An ASIC is a type of integrated circuit that is designed and customized for a sp
   - [32-Registers and their ABI Names](#32-registers-and-their-abi-names)
   - [Sum of Numbers From 1 to n using ASM](#sum-of-numbers-from-1-to-n-using-asm)
 
-## Day 1
+<details>
+<summary> DAY 1 </summary>
+<br>
 
 # ARCHITECTURE FLOW 
 - HIGH LEVEL CODING LANGUAGE Like C or C++
@@ -128,8 +130,12 @@ The range of values that can be represented by an N-bit signed integer is from -
 
 ![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/a1c94b6e-3cea-4ce5-8b2e-9417055c489a)
 
+</details>
 
-## Day 2
+
+<details>
+<summary>Day 2</summary>
+<br>
 
 # Application Binary Interface
 
@@ -253,6 +259,8 @@ Execution
 
 ![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/9b0153fd-5fea-4461-be70-f1411a5819cf)
 
+
+</details> 
 
 ## DAY 3
 
