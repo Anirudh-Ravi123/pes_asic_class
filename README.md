@@ -393,7 +393,127 @@ Here
 - y: output
 
 
+## DAY 4 
 
+# Introduction to Timing Dot Libs
+
+command to open the .lib file is 
+```
+gvim ../my_lib/lib/sky130_fd_sc_tt_025C_1v80.lib
+```
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/6df9825d-50da-478d-a86a-e35c56328dd7)
+
+# Here
+- sky130 indicates 130nm library
+- tt means typical. There can be slow fast and typical libraries
+- 025C indicates the temperatures
+- 1v8 is the voltage
+We mainly look into process voltage and temperature as these vary 
+
+We can also observe the units of various parameters.
+
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/209c0651-3589-45d4-8c47-e69b7aee6221)
+
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/29f0fa49-8712-4c3a-bc2b-570ad7bf9e39)
+
+
+Keyword cell is used to define logic gates and also variations of the same  logic gate.
+
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/51486aee-dc4e-4e46-b660-1a8a1db5e6bf)
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/adc1f2e7-c4bc-43e9-a31f-926b1a6ace82)
+
+
+Here 0,2,4 indicate the width of the logic gate in this case and gate.
+Wider the transisistors area and power consumption is higher  but  delay is reduced.
+
+
+## Hierarchical vs Flat Synthesis
+
+# Hierarchical Synthesis:
+Hierarchical synthesis involves breaking down a complex digital circuit into smaller, more manageable sub-modules or hierarchies. Each hierarchy can then be designed and optimized separately, and these hierarchies are interconnected to form the complete circuit. This approach is analogous to dividing a large problem into smaller, more understandable sub-problems, making the design process more manageable.
+
+# Flat Synthesis
+Flat synthesis, also known as flat design or flat hierarchy, involves designing a digital circuit without significant hierarchical structure. In this approach, the entire design is treated as a single, monolithic block. All the logic components, registers, and other elements are placed on a single level, without being organized into sub-modules or hierarchies. This method can be relatively simple for smaller designs but becomes increasingly challenging to manage as the complexity of the circuit grows. Debugging, optimization, and maintenance can become difficult due to the lack of modularization and organization.
+
+
+The file being anaylyzed is ```multiple_modules.v```
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/c9d2e509-8f03-4122-be54-5d7b909b9ff1
+
+Two submodules are defined. One for AND gate and one for OR gate.
+
+To synthesize the desgign we use yosys 
+- launch yosys by using the command ```yosys```
+- then we read the library file using the command
+```
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+- read the verilog file using the command
+```
+ read_verilog multiple_modules.v
+```
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/684a6ec9-dd8c-4f9b-93ed-4a4621be5f2f)
+
+- to synthesize
+```
+synth -top multiple_modules
+```
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/05338940-dcca-4f45-8a8a-ba6b1a7135ac)
+
+
+-to link the design to the respective library file.
+```
+abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/d13888de-2708-4455-9a65-e7ba14b086a8)
+
+- To see the synthesized design we use the command
+```
+show multiple_modules
+```
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/04fcbe08-e742-479a-bbe6-516d88b791e9)
+
+The modules seen are the logic gates defined in the submodules.
+
+- to generate the netlist
+```
+write_verilog -noattr multiple_modules_hier.v
+geting multiple_modules_hier.v
+```
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/3dc70f1e-8963-49b9-a69a-3c2c213efacd)
+
+- If we use the command
+```
+flatten
+```
+the hierarchies won't be preserved and we will get an even more concise program
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/06c0e126-14dc-4ff2-a130-b214817d84db)
+
+
+
+# Sub Module Level Synthesis 
+
+We follow the previous first two steps to read the library and file 
+
+- to synthesize the sub module we type the command 
+```
+synth -top sub_module1
+```
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/f179c6e9-2709-4281-9f32-9952917961cd)
+
+
+- link the design to the respective library file see the module 
+
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/3bb4f7b7-9592-443e-86d5-108af2fd1e2f)
+
+ Sub Module Synthesis is used if we want to synthisize multiple instances of same module. The submodule can be synthesized and the netlist generated can be replicated.
+ If very big design needs to be synthesized we can synthesize the parts one by one, gather the netlist files and then combine them together to get the final result.
 
 
 
