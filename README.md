@@ -1,4 +1,4 @@
-# pes_asic_class
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/25ae8729-1156-48ca-a90b-8377693c1d3e)# pes_asic_class
 
 VLSI (Very Large-Scale Integration) physical design for ASIC (Application-Specific Integrated Circuit) involves the process of transforming a high-level logical design of a digital circuit into a detailed layout that can be manufactured on a silicon wafer. This process includes various steps and considerations to ensure that the final integrated circuit functions correctly, meets performance requirements, and can be produced reliably.
 It's a complex process that requires careful planning and attention to detail to ensure that the final ASIC functions as intended and meets performance and reliability requirements.
@@ -517,5 +517,221 @@ synth -top sub_module1
 
 
 
- 
- 
+## Various Flop Coding Styles and Optimization
+
+- A flip-flop is a fundamental building block of digital circuits and sequential logic circuits in electronics.
+- It is a bistable multivibrator, which means it has two stable states and can store one bit of information.
+- Flip-flops are used to store and manipulate binary information, making them crucial in the design of memory elements, registers, and other sequential logic components in digital systems.
+- Flip-flops are essential for creating sequential logic circuits, where the output depends not only on the current input but also on the previous states of the circuit.
+- In digital circuits, glitches are unwanted and temporary fluctuations in the output that can occur due to the propagation delays of signals through combinational logic circuits. These fluctuations can result   in incorrect or unintended outputs for a short period of time.
+- To prevent glitches, various techniques are used, and one of these techniques involves the use of flip-flops.
+- When a clock signal transitions, the flip-flop reads its inputs and updates its output accordingly. This synchronization helps ensure that data transitions occur only at specific moments in time, reducing the likelihood of glitches.
+
+
+# D Flip-Flop with Asynchronous Reset
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/8d43caf3-1bfe-4a6b-bd65-6e368e20996b)
+
+- When the asynchronous reset signal  is high the output Q is forced to  logic 0 irrespective of the clock signal's state.
+- On positive edge of the clock and not on the asynchronous reset the stored value is updated at the output.
+
+# D Flip-Flop with Asynchronous Set
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/ca4d6abf-a0d3-4dbb-bca2-ad4bb15b8eb5)
+
+- When the reset is high on the positive edge of the clock, the output of the flip-flop is set to 1.
+- The output is set to d if there is a positive edge on clock and  the asynchronous set is low.
+
+# D Flip-Flop with Synchronous Reset
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/87ebcd03-1370-4821-b867-4b5938bd626c)
+
+- reset only activates on  a positive edge of the clock.
+- the stored value is updated at the output on positive edge of the clock and when reset is low
+
+# D Flip-Flop with Asynchronous Reset and Synchronous Reset
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/a9147167-a704-4703-94d5-88064b8fdd08)
+
+- synchronous reset is high at the positive edge of the clock the output or asynchronous resest is high is forced to 0
+- on positive edge of the clock and when reset is low output is set to d
+
+
+## Flop Synthesis Simulation
+# Asynchronous D Flip Flop 
+Commands 
+- ``` iverilog dff_asyncres.v tb_dff_asyncres.v```
+- ```./a.out```
+- ``` gtkwave tb_dff_asyncres.vcd ```
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/fd2af5e2-5ad6-482d-bd62-47eb53ac0471)
+
+# WAVEFORM  
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/58044ae8-6f32-4ff4-8bdd-390cda34c514)
+
+
+- the clock is postive and asynch_reset is high, it sets the output to 0
+
+# Synthesis 
+Commands 
+```
+yosys
+
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+read_verilog dff_asyncres.v
+
+synth -top dff_asyncres
+```
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/de5f513f-46f2-40f6-bba0-d68ad0c99328)
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/0c1f365b-3460-40c9-bd3f-1715e63027f7)
+
+
+```
+dfflibmap -liberty ../mylib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+abc -liberty ../mylib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+show
+```
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/88133d0a-28fe-42d6-93cc-18f34805076b)
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/0eb5c98f-32c0-4ad0-9554-f8ae8a20595a)
+
+
+
+# D Flip_Flop with Asynchronous Set
+
+```
+iverilog dff_async_set.v tb_dff_async_set.v
+./a.out
+gtkwave tb_dff_async_set.vcd
+```
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/90952f14-fe05-4425-88a4-3b3c87dcf5a1)
+
+WAVEFORM
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/e3a0fe16-6713-4924-9789-68e253f953ef)
+
+
+Here clock is postive and asynch_reset is high, it sets the output to 0 
+
+# Synthesis 
+```
+yosys
+read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog dff_async_set.v
+synth -top dff_async_set
+dfflibmap -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+```
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/fbb37008-0400-446a-89e0-7bf7a9e13239)
+
+
+
+# D Flip-Flop with Synchronous Reset
+
+```
+iverilog dff_syncres.v tb_dff_syncres.v
+./a.out
+gtkwave tb_dff_syncres.vcd
+```
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/cebe1da1-e0db-4b78-ab80-423500bf1dcf)
+
+WAVEFORM
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/33118c34-8c6a-4fb7-8e49-e4b5f93e4985)
+
+Here sync_reset goes high the output remains the same until there is a posedge on the clock
+
+# Synthesis 
+
+```
+yosys
+read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog dff_syncres.v
+synth -top dff_syncres
+dfflibmap -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+```
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/4892ce18-178d-4a15-a9f5-06cf262ab300)
+
+
+
+## Interesting Optimisations
+# First Porgram
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/33861015-108a-426f-92e9-19b3f831062e)
+
+Program that takes a 3 bit input and enerates a 4 bit output
+
+Synthesis 
+```
+yosys
+read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog mult_2.v
+synth -top mul2
+```
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/33726e6f-fdbd-4307-8721-678d1aeb746e)
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/f2fafbb6-20a8-44d6-b3ed-c53a23f5135b)
+
+
+```
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+```
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/291ebeb8-8dc2-47f9-8a37-30c816a004db)
+
+to view the netlist 
+```
+write_verilog -noattr mul2_netlist.v
+!gedit mul2_netlist.v
+```
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/7be5949a-c167-4a67-9177-5b0e3a479da6)
+
+
+
+# Second Porgram
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/7e0590cd-63f3-4499-b64d-946ae3693685)
+
+
+Program  takes a 3 bit input and generates a 4 bit output
+
+Synthesis 
+```
+yosys
+read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog mult_8.v
+synth -top mult8
+```
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/24a6e7e6-c80a-4a2b-b2b2-17637d1b5c08)
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/9c33d5ef-3eb6-400b-9f7b-5530eb422c38)
+
+
+```
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+```
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/36ca424b-e3f8-44a6-8ff0-55e3bb15a1ed)
+
+to generate netlist 
+```
+write_verilog -noattr mult8_netlist.v
+!gedit mult8_netlist.v
+```
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/7150c97f-2178-411b-9059-fd0ba3e383bd)
+
+
+
+
+
+
+
+
+
+
