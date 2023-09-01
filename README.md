@@ -727,11 +727,223 @@ write_verilog -noattr mult8_netlist.v
 ![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/7150c97f-2178-411b-9059-fd0ba3e383bd)
 
 
+## DAY 5
+
+# Introduction to Optimizations
+# Combinational Logic Optimisations
+Combinational logic optimizations are techniques used to improve the efficiency of combinational circuits, which are digital logic circuits with no feedback loops. These optimizations focus on reducing the number of gates, inputs, or levels of logic to achieve better performance, lower power consumption, and smaller chip area. 
+
+ Some common combinational logic optimizations:
+ - Karnaugh Maps (K-maps):
+K-maps are graphical tools used to simplify Boolean functions with up to 4 or 5 variables efficiently. They allow you to visualize and group adjacent 1s in the truth table to identify and eliminate redundant terms.
+
+- Multi-level Logic Optimization:
+Some optimizations involve restructuring logic into multiple levels of gates, such as converting AND-OR logic to XOR-XNOR logic, or vice versa, to minimize the number of gates and levels.
+
+
+# Sequential Logic Optimisations
+
+Sequential logic optimizations aim to improve the efficiency, performance, and reliability of digital circuits that contain flip-flops and memory elements, which store information over time. These optimizations are crucial in digital system design to meet timing constraints, reduce power consumption, and enhance the overall functionality of sequential circuits. 
+Some common sequential logic optimization techniques:
+- Gate-level Optimization:
+Within the combinational logic portions of sequential circuits, apply gate-level optimizations (as mentioned in the previous response) to minimize the number of gates, levels, and inputs.
+
+- Sequential Logic Synthesis:
+Use synthesis tools that specialize in optimizing sequential circuits. These tools can perform state-of-the-art optimizations such as retiming, resource sharing, and technology mapping.
+
+
+
+# Combinational Logic Optimisations Programs 
+1
+
+
+When a = 1 y takes the value of b else  when a = 0 y takes on the value of 0.
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/58518f90-1916-4ef6-8b59-c0704d87f88e)
+
+Commands to synthesize
+
+```
+read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog opt_check.v
+synth -top opt_check
+opt_clean -purge
+abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+```
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/c77cf423-26cc-48b8-a4d6-13983ae70106)
+
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/86373514-2916-4465-976e-adcbe5a5a1f0)
+
+Optimized design
+
+
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/fe5a9b2e-d70a-4da5-8340-de23df8e0735)
+
+
+2
+
+
+When a = 1 y takes the value of 1 else  when a = 0 y takes on the value of b.
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/751e0c48-f545-4e68-a741-9cbd3c3c6324)
+
+Following the same commands as the pervious program but replacing the file name with the respective file to synthesize.
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/1dec5666-e4d0-46a9-88f0-d6ebc71ec890)
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/723dc3d3-9017-4fdd-b69e-81e461a30a12)
+
+
+
+Optimized design
+
+
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/e68107b4-0962-4fa3-a3b0-472ea02901d7)
+
+
+3
+
+
+When a = 1 and c = 1 y gets the value of b else y = 0
+When a=0 y=0
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/b862423c-67e4-41fe-8730-e0ea48f03084)
+
+Following the same commands as the pervious program but replacing the file name with the respective file to synthesize.
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/65e0d4c6-da09-45fb-81e1-c04389eb8c41)
+
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/5e82fb7f-99b0-4f92-80e4-c9c63c7ab618)
+
+
+
+Optimized design
+
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/b5c3b651-f194-4987-bbbe-6ee37684245d)
+
+
+
+4
+
+
+Represents a XOR gate.
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/8de8a1c0-4ecc-42b0-b6ea-dc8465dcb73a)
+
+
+Following the same commands as the pervious program but replacing the file name with the respective file to synthesize.
+
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/c30ca7f0-757b-4261-ab6e-cc63fcec0674)
+
+
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/b33d8cb9-37cf-4f12-84b6-f35d66d9255b)
+
+
+Optimized Design 
+
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/fc96da59-06f3-4db1-b239-e4916771501f)
+
+
+
+5
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/60a9cf9d-f2ae-4db2-9d46-52472d7c9652)
+
+
+Following the same commands as the pervious program but replacing the file name with the respective file to synthsize.
+
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/6e538650-79ca-4b9f-8224-bf82b6bce281)
+
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/be618fc2-c604-40ec-b2ff-23e3bb17d93b)
+
+
+Optimized Design 
+
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/a938f93f-1bd4-4da4-a274-7fd6855cca4b)
+
+
+
+
+6
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/5b7e3e87-527f-4aae-8bf0-1f2fe7cd8b10)
+
+
+Following the same commands as the pervious program but replacing the file name with the respective file to synthsize.
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/b5616914-c749-4de1-9753-9e3c37530596)
+
+
+Optimized Design 
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/56809638-99ad-4098-be66-14f5570faef9)
 
 
 
 
 
+
+
+
+# Sequential Logic Optimisations  Programs 
+
+
+
+
+
+# Sequential Optimisations for Unused Outputs
+
+1
+
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/b0a2ac4f-5b7b-4221-beb3-630878f92ed2)
+
+
+Commands for synthesis
+
+```
+read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog counter_opt.v
+synth -top counter_opt
+dfflibmap -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+```
+
+Synthesis Output 
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/985f1926-3965-45e1-9e1b-3983539ed7fe)
+
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/078c4932-0f13-4d1b-844a-f9bf59ac6d41)
+
+
+
+
+2
+
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/56ca7013-9a5f-4ff9-9346-e6e861973c3a)
+
+Following the same procedure as previous program
+
+Synthesis Output 
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/9d1362aa-9f8a-4b92-98b0-a6aac82aada1)
+
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/46448a15-68bf-4ef4-b1ed-04cfa40dba17)
 
 
 
