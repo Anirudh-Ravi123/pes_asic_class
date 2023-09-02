@@ -41,7 +41,7 @@ An ASIC is a type of integrated circuit that is designed and customized for a sp
   - [Combinational Logic Optimizations](#combinational-logic-optimizations)
   - [Sequential Logic Optimizations](#sequential-logic-optimizations)
   - [Combinational Logic Optimizations Programs](#combinational-logic-optimizations-programs)
-  - [Sequential Logic Optimizations Programs](#sequential-logic-optimizations-programs)
+  - [Sequential Logic Optimizations Programs](#sequential-logic-optimizations-programs) 
   - [Sequential Optimizations for Unused Outputs](#sequential-optimizations-for-unused-outputs)
 
 # RTL design using Verilog with SKY130 Technology - Day 4
@@ -919,7 +919,7 @@ Optimized Design
 
 
 
-# Sequential Logic Optimizations  Programs 
+# Sequential Logic Optimizations Programs 
 1
 
 ![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/2cd45324-7acf-4a84-b357-f90d795821f4)
@@ -1047,7 +1047,7 @@ Following the same steps as previous program for current program file.
 
 ![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/8975d6e2-8040-49bf-9bc2-f80bafc643f1)
 
-# Sequential Optimisations for Unused Outputs
+# Sequential Optimizations for Unused Outputs
 
 1
 
