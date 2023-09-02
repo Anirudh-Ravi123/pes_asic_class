@@ -40,6 +40,8 @@ An ASIC is a type of integrated circuit that is designed and customized for a sp
   - [Introduction to Optimizations](#introduction-to-optimizations)
   - [Combinational Logic Optimizations](#combinational-logic-optimizations)
   - [Sequential Logic Optimizations](#sequential-logic-optimizations)
+  - [Combinational Logic Optimizations Programs](#combinational-logic-optimizations-programs)
+  - [Sequential Logic Optimizations Programs](#sequential-logic-optimizations-programs)
   - [Sequential Optimizations for Unused Outputs](#sequential-optimizations-for-unused-outputs)
 
 # RTL design using Verilog with SKY130 Technology - Day 4
@@ -751,7 +753,7 @@ write_verilog -noattr mult8_netlist.v
 ##  RTL design using Verilog with SKY130 Technology - Day 3
 
 # Introduction to Optimizations
-# Combinational Logic Optimisations
+# Combinational Logic Optimizations
 Combinational logic optimizations are techniques used to improve the efficiency of combinational circuits, which are digital logic circuits with no feedback loops. These optimizations focus on reducing the number of gates, inputs, or levels of logic to achieve better performance, lower power consumption, and smaller chip area. 
 
  Some common combinational logic optimizations:
@@ -762,7 +764,7 @@ K-maps are graphical tools used to simplify Boolean functions with up to 4 or 5 
 Some optimizations involve restructuring logic into multiple levels of gates, such as converting AND-OR logic to XOR-XNOR logic, or vice versa, to minimize the number of gates and levels.
 
 
-# Sequential Logic Optimisations
+# Sequential Logic Optimizations
 
 Sequential logic optimizations aim to improve the efficiency, performance, and reliability of digital circuits that contain flip-flops and memory elements, which store information over time. These optimizations are crucial in digital system design to meet timing constraints, reduce power consumption, and enhance the overall functionality of sequential circuits. 
 Some common sequential logic optimization techniques:
@@ -774,7 +776,7 @@ Use synthesis tools that specialize in optimizing sequential circuits. These too
 
 
 
-# Combinational Logic Optimisations Programs 
+# Combinational Logic Optimizations Programs 
 1
 
 
@@ -917,7 +919,7 @@ Optimized Design
 
 
 
-# Sequential Logic Optimisations  Programs 
+# Sequential Logic Optimizations  Programs 
 1
 
 ![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/2cd45324-7acf-4a84-b357-f90d795821f4)
