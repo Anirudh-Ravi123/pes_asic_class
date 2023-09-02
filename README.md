@@ -1073,6 +1073,249 @@ Synthesis Output
 
 ## DAY 6
 
+# GLS, Synthesis Simulation Mismatch and Blocking NonBlocking Statements
 
+**GLS - Gate Level Simulation**
+Gate-level synthesis is a critical step in digital integrated circuit (IC) design. It is a process that transforms a high-level hardware description, typically in the form of a hardware description language (HDL) like VHDL or Verilog, into a netlist composed of individual logic gates from a library of predefined standard cells. The goal of gate-level synthesis is to create an optimized netlist that meets specific design constraints such as area, power consumption, and timing requirements while preserving the functionality described in the high-level design.
+
+**Synthesis Simulation Mismatch**
+Synthesis-simulation mismatch, also known as synthesis-to-simulation mismatch, refers to discrepancies or differences between the behavior of a digital circuit as described in a high-level hardware description language (HDL) or observed during simulation and its actual behavior after it has been synthesized and implemented in hardware. 
+
+Reasons due to which Synthesis Simulation Mismatch occurs 
+- Blocking and Non Blocking Statments
+This type of mismatch occurs when there is a difference in behavior between simulation and synthesis due to how signals are updated in the HDL code. 
+- Missing elements in sensitivity list
+  This situation occurs when the sensitivity list of a process or an always block in Verilog is incomplete, leading to differences in behavior between simulation and synthesis.
+
+
+**Blocking and non-Blocking assignments*
+- Blocking Assignments:
+Blocking assignments in HDLs are denoted using the = operator.
+They represent a sequential update, where the right-hand side (RHS) expression is evaluated immediately, and the value is assigned to the left-hand side (LHS) signal immediately within the current procedural block.
+
+- Non-Blocking Assignments:
+Non-blocking assignments in HDLs are denoted using the <= operator.
+They represent concurrent updates, where the RHS expression is evaluated for all assignments within the current procedural block first, and then the values are assigned to the LHS signals simultaneously.
+
+
+**Caveats with blocking statements**
+While blocking assignments are essential for specifying certain types of behavior, they come with some caveats and considerations:
+
+-Order of Execution:
+Blocking assignments are executed sequentially in the order they appear within the procedural block.
+
+-Combinational Logic:
+Blocking assignments are commonly used to model combinational logic, where the order of execution doesn't matter.
+
+-Race Conditions:
+Unintentional race conditions can occur when multiple signals are assigned within the same blocking procedural block.
+
+-Sensitivity Lists:
+When using blocking assignments within a clocked always block, the sensitivity list should include only clock and reset signals to ensure proper synthesis.
+
+-Synthesis Implications:
+Blocking assignments can have implications during synthesis. Some synthesis tools may optimize or interpret blocking assignments differently, potentially leading to synthesis-simulation mismatches if not used consistently.
+
+- Nested Blocks:
+When using nested procedural blocks, be aware that blocking assignments in an inner block can affect the behavior of outer blocks.
+
+-Simulation vs. Synthesis:
+In simulation, blocking assignments are typically used to describe combinational logic. Simulators often handle them correctly because they reflect the intended logic behavior.In synthesis, blocking assignments can be problematic if they are not used carefully. Synthesis tools aim to infer hardware, and improper use of blocking assignments may result in unexpected hardware.
+
+
+# Lab on GLS and Synthesis Simulation Mismatch
+
+The first program is a 2:1 mux 
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/b389f949-2cc5-405b-9621-a499dcd9cbb1)
+
+**RTL SIMULATION**
+Commands
+```
+iverilog ternary_operator_mux.v tb_ternary_operator_mux.v
+./a.out
+gtkwave tb_ternary_operator_mux.vcd
+```
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/8cc264ce-9557-4771-8f83-945324c5a442)
+
+**WAVEFORM**
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/bd10e34b-c384-44e2-8eb0-58287bfb3991)
+
+
+Synthesizing the design using yosys
+
+Commands
+```
+read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog ternary_operator_mux.v
+synth -top ternary_operator_mux
+abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+```
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/c79dc180-be35-480d-af38-d51da445f80b)
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/7241c943-9e99-49e5-bc9b-ad7cee5ce2b6)
+
+
+**SYNTHESIZED DESIGN**
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/0fc24c2d-4632-4a0c-b574-805d5059e787)
+
+
+Generating the netlist
+```
+write_verilog -noattr ternary_operator_mux_net.v
+!gedit ternary_operator_mux_net.v
+```
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/d925e84a-7861-478d-96da-da531617e770)
+
+
+Performing the GLS
+
+Commands
+```
+iverilog ../my_lib/verilog_model/primitives.v ../my_lib/verilog_model/sky130_fd_sc_hd.v ternary_operator_mux_net.v tb_ternary_operator_mux.v
+./a.out
+gtkwave tb_ternary_operator_mux_net.vcd
+```
+**WAVEFORM**
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/5f5d4e28-2f8f-460d-a550-9a3511da5e81)
+
+From the RTL and GLS synthesis both the wavforms are matching. 
+
+
+
+**Second Program**
+
+Program for a 2:1 mux where the always block is only evaluated on the select signal.
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/cb27cf01-cb55-4653-bb66-9427eb351760)
+
+**RTL SIMULATION**
+Commands
+```
+iverilog bad_mux.v tb_bad_mux.v
+./a.out
+gtkwave tb_bad_mux.vcd
+```
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/a27d8252-c7e5-4ce6-b817-16ffa6af6b31)
+
+**WAVEFORM**
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/20c03152-5a6c-4f47-9562-522fc3562b6f)
+
+
+Synthesizing the design using yosys
+
+Commands
+```
+read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog bad_mux.v
+synth -top bad_mux
+abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+```
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/19304139-2798-41bb-b19f-b0dc1b4254b8)
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/dcfb1d04-0f65-48ed-91eb-f7a595c995a7)
+
+
+**SYNTHESIZED DESIGN**
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/b73fc263-e6b3-48b7-a9ee-4ac86f20654f)
+
+
+Generating the netlist
+```
+write_verilog -noattr bad_mux_net.v
+!gedit bad_mux_net.v
+```
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/538730cb-688e-469d-917c-d767fe38e0bd)
+
+
+Performing the GLS
+Commands
+```
+iverilog ../my_lib/verilog_model/primitives.v ../my_lib/verilog_model/sky130_fd_sc_hd.v bad_mux_net.v tb_bad_mux.v
+./a.out
+gtkwave tb_bad_mux.vcd
+```
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/17d41409-044e-4f44-a898-8befc036e75f)
+
+
+In the RTL waveform the when the select line is low, i0 is not getting mapped to the output where as in the GLS waveform the i0 is getting mapped to the output. Hence 
+from both the waveforms we can see conclude synthesis-simulation mismatch. 
+
+
+## Labs on synth-sim mismatch for blocking statement
+
+Program for logic d=(a&b)|c using blocking statement.
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/0f688c15-fd66-4056-adc3-404d9651e618)
+
+**RTL SIMULATION**
+
+Commands
+```
+iverilog blocking_caveat.v tb_blocking_caveat.v
+./a.out
+gtkwave tb_blocking_caveat.vcd
+```
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/6b07da78-9aba-4005-8858-834ce1e9be4a)
+
+**WAVEFORM**
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/1502bee3-edf6-449f-90eb-21ec2d240209)
+
+
+
+**SYNTHESIS**
+
+Commands
+```
+read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog blocking_caveat.v
+synth -top blocking_caveat
+abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+```
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/d26ca34b-d256-40e8-a631-ca56d0220611)
+
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/02a79c98-ce3f-4e65-a692-c31755d71e18)
+
+
+**DESIGN**
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/5b372718-1c8a-43cb-ae82-59f6f0a3e314)
+
+
+**Generating Netlist**
+```
+write_verilog -noattr blocking_caveat_net.v
+!gedit  blocking_caveat_net.v
+```
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/dcac6e54-c073-4a77-a1c9-abac271624e5)
+
+
+
+**GLS SYNTHESIS**
+Commands
+```
+iverilog ../my_lib/verilog_model/primitives.v ../my_lib/verilog_model/sky130_fd_sc_hd.v blocking_caveat_net.v tb_blocking_caveat.v
+./a.out
+gtkwave tb_blocking_caveat.vcd
+```
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/7dbf9529-0d4b-403a-b464-a3acc72c8c12)
+
+
+From the two waveforms we can see the synthesis-simulation mistach due to the blocking statements.
 
 
