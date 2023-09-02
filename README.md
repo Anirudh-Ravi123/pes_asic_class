@@ -1129,6 +1129,9 @@ The first program is a 2:1 mux
 ![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/b389f949-2cc5-405b-9621-a499dcd9cbb1)
 
 **RTL SIMULATION**
+
+
+
 Commands
 ```
 iverilog ternary_operator_mux.v tb_ternary_operator_mux.v
@@ -1137,6 +1140,7 @@ gtkwave tb_ternary_operator_mux.vcd
 ```
 
 ![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/8cc264ce-9557-4771-8f83-945324c5a442)
+
 
 **WAVEFORM**
 ![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/bd10e34b-c384-44e2-8eb0-58287bfb3991)
@@ -1152,12 +1156,19 @@ synth -top ternary_operator_mux
 abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 show
 ```
+
 ![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/c79dc180-be35-480d-af38-d51da445f80b)
+
 
 ![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/7241c943-9e99-49e5-bc9b-ad7cee5ce2b6)
 
 
+
+
 **SYNTHESIZED DESIGN**
+
+
+
 ![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/0fc24c2d-4632-4a0c-b574-805d5059e787)
 
 
