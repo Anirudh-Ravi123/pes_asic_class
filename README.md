@@ -25,7 +25,27 @@ An ASIC is a type of integrated circuit that is designed and customized for a sp
   - [Sum of Numbers From 1 to n using ASM](#sum-of-numbers-from-1-to-n-using-asm)
 
 
-## DAY 1 
+# RTL design using Verilog with SKY130 Technology - Day 1
+  - [Iverilog Based Simulation Flow](#iverilog-based-simulation-flow)
+  - [Labs Using Iverilog and gtkwave](#labs-using-iverilog-and-gtkwave)
+  - [Introduction to Yosys and Logic Synthesis](#introduction-to-yosys-and-logic-synthesis)
+
+# RTL design using Verilog with SKY130 Technology - Day 2
+  - [Introduction to timing libs](#introduction-to-timing-libs)
+  - [Hierarchical vs Flat Synthesis](#hierarchical-vs-flat-synthesis)
+  - [Various Flop Coding Styles and Optimization](#various-flop-coding-styles-and-optimization)
+  - [Interesting Optimizations](#interesting-optimizations)
+
+# RTL design using Verilog with SKY130 Technology - Day 3
+  - [Introduction to Optimizations](#introduction-to-optimizations)
+  - [Combinational Logic Optimizations](#combinational-logic-optimizations)
+  - [Sequential Logic Optimizations](#sequential-logic-optimizations)
+  - [Sequential Optimizations for Unused Outputs](#sequential-optimizations-for-unused-outputs)
+
+# RTL design using Verilog with SKY130 Technology - Day 4
+  - [GLS Synthesis Simulation Mismatch and Blocking NonBlocking Statements](#gls-synthesis-simulation-mismatch-and-blocking-nonblocking-statements)
+  - [Lab on GLS and Synthesis Simulation Mismatch](#lab-on-gls-and-synthesis-simulation-mismatch)
+  - [Lab on Synthesis Simulation Mismatch for Blocking Statement](#lab-on-synthesis-simulation-mismatch-for-blocking-statement)
 
 
 # ARCHITECTURE FLOW 
@@ -260,7 +280,7 @@ Execution
 
 
 
-## DAY 3
+## RTL design using Verilog with SKY130 Technology - Day 1
 
 # Introduction to Verilog RTL design and Synthesis with SKY130 Technology
  # Open-Source Simulator iVerilog
@@ -393,7 +413,8 @@ Here
 - y: output
 
 
-## DAY 4 
+## RTL design using Verilog with SKY130 Technology - Day 2
+
 
 # Introduction to Timing Dot Libs
 
@@ -727,7 +748,7 @@ write_verilog -noattr mult8_netlist.v
 ![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/7150c97f-2178-411b-9059-fd0ba3e383bd)
 
 
-## DAY 5
+##  RTL design using Verilog with SKY130 Technology - Day 3
 
 # Introduction to Optimizations
 # Combinational Logic Optimisations
@@ -1071,7 +1092,7 @@ Synthesis Output
 
 
 
-## DAY 6
+## RTL design using Verilog with SKY130 Technology - Day 4
 
 # GLS, Synthesis Simulation Mismatch and Blocking NonBlocking Statements
 
