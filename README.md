@@ -1,4 +1,4 @@
-![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/25ae8729-1156-48ca-a90b-8377693c1d3e)# pes_asic_class
+# pes_asic_class
 
 VLSI (Very Large-Scale Integration) physical design for ASIC (Application-Specific Integrated Circuit) involves the process of transforming a high-level logical design of a digital circuit into a detailed layout that can be manufactured on a silicon wafer. This process includes various steps and considerations to ensure that the final integrated circuit functions correctly, meets performance requirements, and can be produced reliably.
 It's a complex process that requires careful planning and attention to detail to ensure that the final ASIC functions as intended and meets performance and reliability requirements.
