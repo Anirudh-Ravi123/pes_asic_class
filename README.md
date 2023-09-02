@@ -28,7 +28,7 @@ An ASIC is a type of integrated circuit that is designed and customized for a sp
 
 # RTL design using Verilog with SKY130 Technology - Day 1
   - [Open-Source Simulator iVerilog](#open-source-simulator-iverilog)
-  - [Labs Using Iverilog and gtkwave](#labs-using-iverilog-and-gtkwave) 
+  - [Lab Using Iverilog and gtkwave](#lab-using-iverilog-and-gtkwave) 
   - [Introduction to Verilog RTL design and Synthesis](#introduction-to-verilog-rtl-design-and-synthesis)
 
 # RTL design using Verilog with SKY130 Technology - Day 2
