@@ -952,13 +952,77 @@ Following the same steps as previous program for current program file.
 ![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/3bb6dd1c-3cde-4c15-8392-de460a6368d6)
 
 **Synthesized Design**
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/215c1ecb-bc4f-4f9c-ae60-bf44f161a2e1)
+
 ![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/ed070134-09be-41ef-a6cd-ec2a09505ae6)
 
 ![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/a1b0fa6f-78ff-4047-8952-1b69a87eabbf)
 
 
+
+
 3
 
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/32d3a598-5cd9-4907-b0ef-98df8c3b551d)
+
+The output of firstflop is input for the other flop.
+
+Following the same steps as previous program for current program file.
+
+**WAVEFORM**
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/65beba64-79a1-434d-b749-00ae21722c6c)
+
+
+**Synthesized Design**
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/82b7125d-c921-457e-887a-2e9e14ca4843)
+
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/16f22982-897d-4386-89c4-fb28bdfb73a6)
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/8f86955c-e19b-442a-ab17-bda9d3b83acf)
+
+
+4
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/df1efcf6-5581-4e4f-9bc4-03b9a84f2549)
+
+The output of firstflop is input for the other flop.
+
+Following the same steps as previous program for current program file.
+
+**WAVEFORM**
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/2c8e44be-0053-444d-bad2-bad5f902c2cd)
+
+**Synthesized Design**
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/fa5bda5e-3c51-44e1-ba96-0ccc96c6c449)
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/7b0b521a-0d64-4ae6-8b5b-92065f6370df)
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/bcb65d10-64e7-49df-9c65-26438c61d2e4)
+
+
+5
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/d7845c41-022d-4548-a792-f153605abc34)
+
+The output of firstflop is input for the other flop.
+
+Following the same steps as previous program for current program file.
+
+**WAVEFORM**
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/1a37ef1a-b2f2-42a2-ba2c-5ef7f22a71d3)
+
+**Synthesized Design**
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/290ec120-1555-4b40-9ca6-5ea3c919936d)
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/2e2dd3ba-8217-4017-8657-a591787b4dcc)
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/8975d6e2-8040-49bf-9bc2-f80bafc643f1)
 
 # Sequential Optimisations for Unused Outputs
 
@@ -967,6 +1031,7 @@ Following the same steps as previous program for current program file.
 
 ![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/b0a2ac4f-5b7b-4221-beb3-630878f92ed2)
 
+program for  a 3-bit up counter
 
 Commands for synthesis
 
@@ -1005,6 +1070,8 @@ Synthesis Output
 
 
 
+
+## DAY 6
 
 
 
