@@ -27,9 +27,9 @@ An ASIC is a type of integrated circuit that is designed and customized for a sp
 
 
 # RTL design using Verilog with SKY130 Technology - Day 1
-  - [Iverilog Based Simulation Flow](#iverilog-based-simulation-flow)
-  - [Labs Using Iverilog and gtkwave](#labs-using-iverilog-and-gtkwave)
-  - [Introduction to Yosys and Logic Synthesis](#introduction-to-yosys-and-logic-synthesis)
+  - [Open-Source Simulator iVerilog](#open-source-simulator-iverilog)
+  - [Labs Using Iverilog and gtkwave](#labs-using-iverilog-and-gtkwave) 
+  - [Introduction to Verilog RTL design and Synthesis](#introduction-to-verilog-rtl-design-and-synthesis)
 
 # RTL design using Verilog with SKY130 Technology - Day 2
   - [Introduction to Timing Dot Libs](#introduction-to-timing-dot-libs)
@@ -286,7 +286,7 @@ Execution
 ## RTL design using Verilog with SKY130 Technology - Day 1
 
 # Introduction to Verilog RTL design and Synthesis with SKY130 Technology
- # Open-Source Simulator iVerilog
+# Open-Source Simulator iVerilog
 
 **Simulator**
 It is a tool used for simulating the design. It looks for the changes on the input signals to evaluate the outputs.
@@ -304,7 +304,7 @@ Simulation Flow
 ![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/407cd84a-dfb3-4d28-8cff-c6e3db310d4b)
 
 
-# LAB USING VERILOG AND GTKWAVE 
+# LAB USING IVERILOG AND GTKWAVE 
 Installation 
 - Create a new directory in home called as vsd and inside vsd create directory vlsi
 - run the command
