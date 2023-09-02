@@ -897,9 +897,67 @@ Optimized Design
 
 
 # Sequential Logic Optimisations  Programs 
+1
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/2cd45324-7acf-4a84-b357-f90d795821f4)
+
+Reset is 1 the output D is always 0.
+If Reset is 0 and on  positive edge of the clock the output is D = 1.
+Simulation commands
+```
+iverilog dff_const1.v tb_dff_const1.v
+/a.out
+gtkwave tb_dff_const1.vcd
+```
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/cceb9b1b-9118-452c-9850-0ba63e80df97)
+
+**WAVEFORM**
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/89b6fae1-0746-4fe7-80bc-cfe6ee0a919b)
 
 
 
+Synthesis commands
+```
+read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog dff_const1.v
+synth -top dff_const1
+dfflibmap -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+```
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/f081dde8-a545-4638-b6a9-4bbdf63b2541)
+
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/1cddc137-5411-4b22-a1ca-6d3c8e2d5bf7)
+
+**Synthesized Design**
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/de15e59f-4508-41d9-b1f8-5abed5af57e4)
+
+
+
+
+2
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/5cccba48-5703-4141-9e84-db0f0e03a394)
+
+Reset is 1 the output D is always 0.
+If Reset is 0 and on positive edge of the clock the output is D = 1.
+
+Following the same steps as previous program for current program file.
+
+**WAVEFORM**
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/3bb6dd1c-3cde-4c15-8392-de460a6368d6)
+
+**Synthesized Design**
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/ed070134-09be-41ef-a6cd-ec2a09505ae6)
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/a1b0fa6f-78ff-4047-8952-1b69a87eabbf)
+
+
+3
 
 
 # Sequential Optimisations for Unused Outputs
@@ -944,6 +1002,10 @@ Synthesis Output
 
 
 ![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/46448a15-68bf-4ef4-b1ed-04cfa40dba17)
+
+
+
+
 
 
 
