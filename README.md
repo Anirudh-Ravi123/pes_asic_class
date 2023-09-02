@@ -1,3 +1,4 @@
+
 # pes_asic_class
 
 VLSI (Very Large-Scale Integration) physical design for ASIC (Application-Specific Integrated Circuit) involves the process of transforming a high-level logical design of a digital circuit into a detailed layout that can be manufactured on a silicon wafer. This process includes various steps and considerations to ensure that the final integrated circuit functions correctly, meets performance requirements, and can be produced reliably.
@@ -463,8 +464,10 @@ Hierarchical synthesis involves breaking down a complex digital circuit into sma
 Flat synthesis, also known as flat design or flat hierarchy, involves designing a digital circuit without significant hierarchical structure. In this approach, the entire design is treated as a single, monolithic block. All the logic components, registers, and other elements are placed on a single level, without being organized into sub-modules or hierarchies. This method can be relatively simple for smaller designs but becomes increasingly challenging to manage as the complexity of the circuit grows. Debugging, optimization, and maintenance can become difficult due to the lack of modularization and organization.
 
 
-The file being anaylyzed is ```multiple_modules.v```
-![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/c9d2e509-8f03-4122-be54-5d7b909b9ff1
+The file being anaylyzed is 
+```multiple_modules.v```
+
+![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/c9d2e509-8f03-4122-be54-5d7b909b9ff1)
 
 Two submodules are defined. One for AND gate and one for OR gate.
 
