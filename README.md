@@ -625,7 +625,7 @@ show
 
 
 
-# D Flip_Flop with Asynchronous Set
+# D Flip-Flop with Asynchronous Set
 
 ```
 iverilog dff_async_set.v tb_dff_async_set.v
@@ -686,7 +686,7 @@ show
 
 
 
-## Interesting Optimisations
+## Interesting Optimizations
 # First Porgram
 
 ![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/33861015-108a-426f-92e9-19b3f831062e)
