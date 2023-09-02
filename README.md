@@ -31,7 +31,7 @@ An ASIC is a type of integrated circuit that is designed and customized for a sp
   - [Introduction to Yosys and Logic Synthesis](#introduction-to-yosys-and-logic-synthesis)
 
 # RTL design using Verilog with SKY130 Technology - Day 2
-  - [Introduction to timing libs](#introduction-to-timing-libs)
+  - [Introduction to Timing Dot Libs](#introduction-to-timing-dot-libs)
   - [Hierarchical vs Flat Synthesis](#hierarchical-vs-flat-synthesis)
   - [Various Flop Coding Styles and Optimization](#various-flop-coding-styles-and-optimization)
   - [Interesting Optimizations](#interesting-optimizations)
