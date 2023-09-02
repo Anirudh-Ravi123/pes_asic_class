@@ -1282,7 +1282,7 @@ In the RTL waveform the when the select line is low, i0 is not getting mapped to
 from both the waveforms we can see conclude synthesis-simulation mismatch. 
 
 
-## Labs on synth-sim mismatch for blocking statement
+## Labs on synthesis-simulation mismatch for blocking statement
 
 Program for logic d=(a&b)|c using blocking statement.
 
