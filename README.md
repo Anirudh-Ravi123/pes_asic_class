@@ -1218,7 +1218,7 @@ gtkwave tb_ternary_operator_mux_net.vcd
 **WAVEFORM**
 ![image](https://github.com/Anirudh-Ravi123/pes_asic_class/assets/142154804/5f5d4e28-2f8f-460d-a550-9a3511da5e81)
 
-From the RTL and GLS synthesis both the wavforms are matching. 
+From the RTL and GLS  both the wavforms are matching. 
 
 
 
@@ -1342,7 +1342,7 @@ write_verilog -noattr blocking_caveat_net.v
 
 
 
-**GLS SYNTHESIS**
+**GLS**
 Commands
 ```
 iverilog ../my_lib/verilog_model/primitives.v ../my_lib/verilog_model/sky130_fd_sc_hd.v blocking_caveat_net.v tb_blocking_caveat.v
